@@ -1,0 +1,23 @@
+#root {
+  scroll-behavior: smooth;
+}
+
+ul.countries {
+  list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-row: auto;
+    width: 90%;
+    grid-gap: 5px;
+    margin: 30px auto;
+}
+
+img.flag {
+    height: 100px;
+}
+
+li.country {
+    cursor: pointer;
+    perspective: 100px;
+    perspective-origin: top;
+}
