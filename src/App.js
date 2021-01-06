@@ -1,25 +1,10 @@
 import React from "react";
 import "./App.css";
-import { useQuery, gql } from "@apollo/client";
-const all_countries = gql`
-  query {
-    Country {
-      _id
-      name
-      capital
-      flag {
-        svgFile
-      }
-      currencies{
-        code
-        name
-      }
-    }
-  }
-`;
-
+import { useQuery } from "@apollo/client";
+import { loader } from "graphql.macro";
+const query = loader('./querries/countries.gql');
 function App() {
-  const { loading, error, data } = useQuery(all_countries);
+  const { loading, error, data } = useQuery(query);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>something is wrong</p>;
   return (

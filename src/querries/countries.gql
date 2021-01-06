@@ -1,0 +1,14 @@
+query {
+    Country {
+      _id
+      name
+      capital
+      flag {
+        svgFile
+      }
+      currencies{
+        code
+        name
+      }
+    }
+  }
